@@ -8,7 +8,7 @@ const {
 // Use another puppet: const bot = new Wechaty({puppet: 'wechat4u'})
 // 'puppeteer', 'wechat4u', 'padchat', 'mock'
 // Default is 'puppeteer', if you can't start the bot, please try 'wechat4u' or others
-const bot = new Wechaty()
+const bot = new Wechaty({puppet: 'padchat'})
 
 bot.on('scan',    onScan)
 bot.on('login',   onLogin)
@@ -54,7 +54,9 @@ async function onMessage (msg) {
     } else {
       // if you say 'hi' it should answer you
       if (msgContent === 'hi') {
-        await contact.say('hello, I am wechat bot')
+        await contact.say('hello, I am a boy')
+      } else {
+        await contact.say('what do you need ?')
       }
     }
 
